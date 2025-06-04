@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference\Chat\Response\Stream;
+namespace phpGraph\Inference\Chat\Response\Stream;
 
-use ArtGraph\Inference\Chat\Response\ChatResponseInterface;
+use phpGraph\Inference\Chat\Response\ChatResponseInterface;
 use Symfony\Contracts\Service\ResetInterface;
 
 interface ChatStreamHandlerInterface extends ResetInterface

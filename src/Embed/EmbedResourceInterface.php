@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference\Embed;
+namespace phpGraph\Inference\Embed;
 
-use ArtGraph\Inference\Embed\Request\EmbedRequestInterface;
-use ArtGraph\Inference\Embed\Response\EmbedResponseInterface;
+use phpGraph\Inference\Embed\Request\EmbedRequestInterface;
+use phpGraph\Inference\Embed\Response\EmbedResponseInterface;
 
 interface EmbedResourceInterface
 {

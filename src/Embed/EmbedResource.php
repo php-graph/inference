@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference\Embed;
+namespace phpGraph\Inference\Embed;
 
-use ArtGraph\Inference\ProviderClientInterface;
-use ArtGraph\Inference\Embed\Request\EmbedRequestInterface;
-use ArtGraph\Inference\Embed\Response\EmbedResponse;
-use ArtGraph\Inference\Embed\Response\EmbedResponseInterface;
+use phpGraph\Inference\ProviderClientInterface;
+use phpGraph\Inference\Embed\Request\EmbedRequestInterface;
+use phpGraph\Inference\Embed\Response\EmbedResponse;
+use phpGraph\Inference\Embed\Response\EmbedResponseInterface;
 use Symfony\Component\HttpClient\Exception\TransportException;
 
 readonly class EmbedResource implements EmbedResourceInterface

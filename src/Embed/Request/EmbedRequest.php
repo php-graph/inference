@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference\Embed\Request;
+namespace phpGraph\Inference\Embed\Request;
 
 use Doctrine\Common\Collections\ArrayCollection;
 

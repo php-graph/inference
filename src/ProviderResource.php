@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference;
+namespace phpGraph\Inference;
 
-use ArtGraph\Inference\Chat\ChatResourceInterface;
-use ArtGraph\Inference\Chat\ChatStreamedResourceInterface;
-use ArtGraph\Inference\Embed\EmbedResourceInterface;
+use phpGraph\Inference\Chat\ChatResourceInterface;
+use phpGraph\Inference\Chat\ChatStreamedResourceInterface;
+use phpGraph\Inference\Embed\EmbedResourceInterface;
 
 readonly class ProviderResource implements ProviderResourceInterface
 {

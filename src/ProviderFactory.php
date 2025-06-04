@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference;
+namespace phpGraph\Inference;
 
-use ArtGraph\Inference\Chat\ChatResource;
-use ArtGraph\Inference\Chat\ChatStreamedResource;
-use ArtGraph\Inference\Embed\EmbedResource;
+use phpGraph\Inference\Chat\ChatResource;
+use phpGraph\Inference\Chat\ChatStreamedResource;
+use phpGraph\Inference\Embed\EmbedResource;
 use Symfony\Component\HttpClient\HttpOptions;
 
 class ProviderFactory implements ProviderFactoryInterface

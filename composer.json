@@ -1,5 +1,5 @@
 {
-  "name": "phpgraph/inference-ollama",
+  "name": "php-graph/inference-ollama",
   "type": "library",
   "description": "Inference with LLM providers",
   "keywords": [
@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ArtGraph\\Inference\\": "src/"
+      "phpGraph\\Inference\\": "src/"
     },
     "exclude-from-classmap": [
       "/Tests/"

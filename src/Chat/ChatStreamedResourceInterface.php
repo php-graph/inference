@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference\Chat;
+namespace phpGraph\Inference\Chat;
 
-use ArtGraph\Inference\Chat\Request\ChatRequestInterface;
-use ArtGraph\Inference\Chat\Response\ChatResponseInterface;
-use ArtGraph\Inference\Chat\Response\Stream\ChatStreamHandlerInterface;
+use phpGraph\Inference\Chat\Request\ChatRequestInterface;
+use phpGraph\Inference\Chat\Response\ChatResponseInterface;
+use phpGraph\Inference\Chat\Response\Stream\ChatStreamHandlerInterface;
 
 interface ChatStreamedResourceInterface
 {

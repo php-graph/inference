@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ArtGraph\Inference;
+namespace phpGraph\Inference;
 
 use Symfony\Contracts\HttpClient\Exception\TransportExceptionInterface;
 use Symfony\Contracts\HttpClient\ResponseInterface;
