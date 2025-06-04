@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace phpGraph\Inference\Chat\Request;
+namespace ArtGraph\Inference\Chat\Request;
 
 use Doctrine\Common\Collections\ArrayCollection;
 

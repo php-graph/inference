@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace phpGraph\Inference\Chat;
+namespace ArtGraph\Inference\Chat;
 
-use phpGraph\Inference\ProviderClientInterface;
-use phpGraph\Inference\Chat\Request\ChatRequestInterface;
-use phpGraph\Inference\Chat\Response\ChatResponse;
-use phpGraph\Inference\Chat\Response\ChatResponseInterface;
+use ArtGraph\Inference\ProviderClientInterface;
+use ArtGraph\Inference\Chat\Request\ChatRequestInterface;
+use ArtGraph\Inference\Chat\Response\ChatResponse;
+use ArtGraph\Inference\Chat\Response\ChatResponseInterface;
 use Symfony\Component\HttpClient\Exception\TransportException;
 
 readonly class ChatResource implements ChatResourceInterface

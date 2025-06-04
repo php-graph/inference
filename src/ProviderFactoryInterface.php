@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace phpGraph\Inference;
+namespace ArtGraph\Inference;
 
 interface ProviderFactoryInterface
 {

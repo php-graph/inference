@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace phpGraph\Inference\Chat;
+namespace ArtGraph\Inference\Chat;
 
-use phpGraph\Inference\Chat\Request\ChatRequestInterface;
-use phpGraph\Inference\Chat\Response\ChatResponseInterface;
+use ArtGraph\Inference\Chat\Request\ChatRequestInterface;
+use ArtGraph\Inference\Chat\Response\ChatResponseInterface;
 
 interface ChatResourceInterface
 {

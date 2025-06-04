@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace phpGraph\Inference\Chat\Response\Stream;
+namespace ArtGraph\Inference\Chat\Response\Stream;
 
-use phpGraph\Inference\Chat\Response\ChatResponseInterface;
+use ArtGraph\Inference\Chat\Response\ChatResponseInterface;
 
 class ChatStreamHandler implements ChatStreamHandlerInterface
 {

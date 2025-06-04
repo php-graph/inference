@@ -21,8 +21,8 @@ composer require phpgraph/inference
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
 
 $resource = ProviderFactory::createOllamaResource('http://localhost:11434/');
 
@@ -55,10 +55,10 @@ echo $resource->chat()->execute($request)->toArray()['message']['content'];
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
-use phpGraph\Inference\Chat\Response\ChatResponse;
-use phpGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\Chat\Response\ChatResponse;
+use ArtGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
 
 $resource = ProviderFactory::createOllamaResource('http://localhost:11434/');
 
@@ -97,8 +97,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Embed\Request\EmbedRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Embed\Request\EmbedRequest;
 
 $resource = ProviderFactory::createOllamaResource('http://localhost:11434/');
 
@@ -122,8 +122,8 @@ echo $resource->embed()->execute($request)->toArray()['embedding'];
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
 
 $apiKey = getenv('OPENAI_API_KEY');
 
@@ -158,10 +158,10 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
-use phpGraph\Inference\Chat\Response\ChatResponse;
-use phpGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\Chat\Response\ChatResponse;
+use ArtGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
 
 $apiKey = getenv('OPENAI_API_KEY');
 
@@ -202,8 +202,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Embed\Request\EmbedRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('OPENAI_API_KEY');
 
@@ -231,8 +231,8 @@ echo $resource->embed()->execute($request)->toArray();
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
 
 $apiKey = getenv('MISTRAL_API_KEY');
 
@@ -267,10 +267,10 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
-use phpGraph\Inference\Chat\Response\ChatResponse;
-use phpGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\Chat\Response\ChatResponse;
+use ArtGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
 
 $apiKey = getenv('MISTRAL_API_KEY');
 
@@ -311,8 +311,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Embed\Request\EmbedRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('MISTRAL_API_KEY');
 
@@ -340,8 +340,8 @@ echo $resource->embed()->execute($request)->toArray();
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
 
 $apiKey = getenv('DEEPSEEK_API_KEY');
 
@@ -376,10 +376,10 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Chat\Request\ChatRequest;
-use phpGraph\Inference\Chat\Response\ChatResponse;
-use phpGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Chat\Request\ChatRequest;
+use ArtGraph\Inference\Chat\Response\ChatResponse;
+use ArtGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
 
 $apiKey = getenv('DEEPSEEK_API_KEY');
 
@@ -420,8 +420,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```php
 <?php
 
-use phpGraph\Inference\ProviderFactory;
-use phpGraph\Inference\Embed\Request\EmbedRequest;
+use ArtGraph\Inference\ProviderFactory;
+use ArtGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('DEEPSEEK_API_KEY');
 

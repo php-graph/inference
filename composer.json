@@ -25,7 +25,7 @@
   },
   "autoload": {
     "psr-4": {
-      "phpGraph\\Inference\\": "src/"
+      "ArtGraph\\Inference\\": "src/"
     },
     "exclude-from-classmap": [
       "/Tests/"
