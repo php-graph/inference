@@ -11,11 +11,6 @@ use phpGraph\Inference\Embed\EmbedResourceInterface;
 interface ProviderResourceInterface
 {
     /**
-     * @return string
-     */
-    public function name(): string;
-
-    /**
      * @return ChatResourceInterface
      */
     public function chat(): ChatResourceInterface;

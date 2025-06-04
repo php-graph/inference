@@ -11,26 +11,16 @@ use phpGraph\Inference\Embed\EmbedResourceInterface;
 readonly class ProviderResource implements ProviderResourceInterface
 {
     /**
-     * @param string $name
      * @param ChatResourceInterface $chatResource
      * @param ChatStreamedResourceInterface $chatStreamedResource
      * @param EmbedResourceInterface $embedResource
      */
     public function __construct(
-        private string                              $name,
         private ChatResourceInterface               $chatResource,
         private ChatStreamedResourceInterface       $chatStreamedResource,
         private EmbedResourceInterface              $embedResource,
     )
     {
-    }
-
-    /**
-     * @return string
-     */
-    public function name(): string
-    {
-        return $this->name;
     }
 
     /**

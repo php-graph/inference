@@ -25,7 +25,6 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            name: 'ollama',
             chatResource: new ChatResource($httpClient, '/api/chat'),
             chatStreamedResource: new ChatStreamedResource($httpClient, '/api/chat'),
             embedResource: new EmbedResource($httpClient, '/api/embed'),
@@ -47,7 +46,6 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            name: 'open-ai',
             chatResource: new ChatResource($httpClient, '/chat/completions'),
             chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
             embedResource: new EmbedResource($httpClient, '/embeddings'),
@@ -69,7 +67,6 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            name: 'mistral',
             chatResource: new ChatResource($httpClient, '/chat/completions'),
             chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
             embedResource: new EmbedResource($httpClient, '/embeddings'),
@@ -91,7 +88,6 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            name: 'deep-seek',
             chatResource: new ChatResource($httpClient, '/chat/completions'),
             chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
             embedResource: new EmbedResource($httpClient, '/embeddings'),
