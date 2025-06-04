@@ -4,8 +4,6 @@
 
 ## Get Started
 
----
-
 First, install phpGraph Inference via the [Composer](https://getcomposer.org/) package manager:
 
 ```bash
@@ -13,8 +11,6 @@ composer require phpgraph/inference
 ```
 
 ## Usages
-
----
 
 ### Ollama
 
