@@ -1,0 +1,35 @@
+{
+  "name": "phpgraph/inference-ollama",
+  "type": "library",
+  "description": "Inference with LLM providers",
+  "keywords": [
+    "Inference",
+    "Ollama",
+    "OpenAi",
+    "Mistral",
+    "DeepSeek"
+  ],
+  "homepage": "https://phpgraph.io",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "phpGraph Community",
+      "homepage": "https://phpgraph.io/contributors"
+    }
+  ],
+  "require": {
+    "php": ">=8.3",
+    "symfony/http-client-contracts": "^3.6",
+    "symfony/http-client": "^7.3",
+    "doctrine/collections": "^1.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "phpGraph\\Inference\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  },
+  "minimum-stability": "stable"
+}
