@@ -16,6 +16,8 @@ composer require phpgraph/inference
 
 #### Chat
 
+> The following example demonstrates how to use Ollama as a local LLM provider for a standard chat interaction. You instantiate a resource, build your message history, and get the assistant's response.
+
 ```php
 <?php
 
@@ -47,6 +49,8 @@ echo $resource->chat()->execute($request)->toArray()['message']['content'];
 ```
 
 #### Chat Stream
+
+> To stream the response token-by-token (useful for chat UIs and progress feedback), instantiate the resource with `chatStreamed()` and provide a handler that processes each chunk as it arrives.
 
 ```php
 <?php
@@ -88,6 +92,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 
 #### Embeddings
 
+> To generate vector embeddings with Ollama, simply use the `embed()` method on the resource and pass your text or batch of texts. The returned array contains the embedding vector(s).
+
 ```php
 <?php
 
@@ -108,6 +114,8 @@ echo $resource->embed()->execute($request)->toArray()['embedding'];
 ### OpenAI
 
 #### Chat
+
+> For OpenAI's GPT models, the usage is nearly identical. After configuring your API key and provider, send your conversation history and extract the assistant's response from the returned structure.
 
 ```php
 <?php
@@ -142,6 +150,8 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```
 
 #### Chat Stream
+
+> OpenAI also supports streaming chat completions. Use the streaming resource and provide a handler that is called for each streamed content delta.
 
 ```php
 <?php
@@ -184,6 +194,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```
 
 #### Embeddings
+
+> To get high-quality embeddings from OpenAI, specify the embedding model and input texts. The response contains an array of embeddings matching the input order.
 
 ```php
 <?php
@@ -211,6 +223,8 @@ echo $resource->embed()->execute($request)->toArray();
 
 #### Chat
 
+> Mistral provides OpenAI-compatible chat endpoints. Simply use your API key and the right model. The format and usage remain consistent with the other providers.
+
 ```php
 <?php
 
@@ -244,6 +258,8 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```
 
 #### Chat Stream
+
+> Streaming responses are supported just like with OpenAI, making it easy to plug into chat UIs or progressive LLM pipelines.
 
 ```php
 <?php
@@ -286,6 +302,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```
 
 #### Embeddings
+
+> For embeddings, use the appropriate Mistral model. The structure of the response is similar to OpenAI's, with each embedding in the `data` array.
 
 ```php
 <?php
@@ -313,6 +331,8 @@ echo $resource->embed()->execute($request)->toArray();
 
 #### Chat
 
+> DeepSeek also exposes an OpenAI-compatible API. You can interact with it in the same way, making switching providers simple.
+
 ```php
 <?php
 
@@ -346,6 +366,8 @@ echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['c
 ```
 
 #### Chat Stream
+
+> Streaming works identically: use the streamed resource and process each chunk via your handler.
 
 ```php
 <?php
@@ -388,6 +410,8 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 ```
 
 #### Embeddings
+
+> DeepSeek embeddings are retrieved with the same API contract. Specify the embedding model and input; parse the embeddings from the `data` array in the response.
 
 ```php
 <?php
