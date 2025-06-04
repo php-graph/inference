@@ -98,13 +98,15 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 <?php
 
 use phpGraph\Inference\ProviderFactory;
+use phpGraph\Inference\Embed\Request\EmbedRequest;
 
 $resource = ProviderFactory::createOllamaResource('http://localhost:11434/');
 
-$request = [
+$request = new EmbedRequest([
     'model'     => 'nomic-embed-text',
     'prompt'    => 'This is a test sentence for embedding.',
-];
+    ],
+]);
 
 echo $resource->embed()->execute($request)->toArray()['embedding'];
 ```
@@ -201,18 +203,19 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 <?php
 
 use phpGraph\Inference\ProviderFactory;
+use phpGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('OPENAI_API_KEY');
 
 $resource = ProviderFactory::createOpenAiResource($apiKey);
 
-$request = [
+$request = new EmbedRequest([
     'model' => 'text-embedding-3-small',
     'input' => [
         'This is a test sentence for embedding.',
         'Another sentence to embed.'
     ],
-];
+]);
 
 echo $resource->embed()->execute($request)->toArray();
 ```
@@ -309,18 +312,19 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 <?php
 
 use phpGraph\Inference\ProviderFactory;
+use phpGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('MISTRAL_API_KEY');
 
 $resource = ProviderFactory::createMistralResource($apiKey);
 
-$request = [
+$request = new EmbedRequest([
     'model' => 'mistral-embed',
     'input' => [
         'This is a test sentence for embedding.',
         'Another sentence to embed.'
     ],
-];
+]);
 
 echo $resource->embed()->execute($request)->toArray();
 ```
@@ -417,18 +421,19 @@ $resource->chatStreamed()->execute($request, $streamHandler);
 <?php
 
 use phpGraph\Inference\ProviderFactory;
+use phpGraph\Inference\Embed\Request\EmbedRequest;
 
 $apiKey = getenv('DEEPSEEK_API_KEY');
 
 $resource = ProviderFactory::createDeepSeekResource($apiKey);
 
-$request = [
+$request = new EmbedRequest([
     'model' => 'deepseek-embedding',
     'input' => [
         'This is a test sentence for embedding.',
         'Another sentence to embed.'
     ],
-];
+]);
 
 echo $resource->embed()->execute($request)->toArray();
 ```
