@@ -7,7 +7,7 @@
 First, install phpGraph Inference via the [Composer](https://getcomposer.org/) package manager:
 
 ```bash
-composer require phpgraph/inference
+composer require php-graph/inference
 ```
 
 ## Usages
