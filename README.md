@@ -2,8 +2,8 @@
 
 # Inference
 
-The project is a PHP component designed to simplify the integration and usage of Large Language Models (LLMs) from various providers, including Ollama, OpenAI, Mistral, DeepSeek, and more.
-It offers a unified interface for :
+This project is a PHP component designed to simplify the integration and usage of Large Language Models (LLMs) from various providers, including Ollama, OpenAI, Mistral, DeepSeek, and more.
+It offers a unified interface for:
 
 * Interacting with chat models (standard completions, streaming, etc.)
 * Generating vector embeddings
