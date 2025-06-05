@@ -29,7 +29,7 @@
       "phpGraph\\Inference\\": "src/"
     },
     "exclude-from-classmap": [
-      "/Tests/"
+      "/tests/"
     ]
   },
   "minimum-stability": "stable"
