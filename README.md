@@ -45,7 +45,9 @@ $request = new ChatRequest([
     'stream' => false,
 ]);
 
-echo $resource->chat()->execute($request)->toArray()['message']['content'];
+$response = $resource->chat()->execute($request);
+
+echo $response->toArray()['message']['content'];
 ```
 
 #### Chat Stream
@@ -148,7 +150,9 @@ $request = new ChatRequest([
     'stream' => false,
 ]);
 
-echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['content'];
+$response = $resource->chat()->execute($request);
+
+echo $response->toArray()['choices'][0]['message']['content'];
 ```
 
 #### Chat Stream
@@ -257,7 +261,9 @@ $request = new ChatRequest([
     'stream' => false,
 ]);
 
-echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['content'];
+$response = $resource->chat()->execute($request);
+
+echo $response->toArray()['choices'][0]['message']['content'];
 ```
 
 #### Chat Stream
@@ -366,7 +372,9 @@ $request = new ChatRequest([
     'stream' => false,
 ]);
 
-echo $resource->chat()->execute($request)->toArray()['choices'][0]['message']['content'];
+$response = $resource->chat()->execute($request);
+
+echo $response->toArray()['choices'][0]['message']['content'];
 ```
 
 #### Chat Stream
