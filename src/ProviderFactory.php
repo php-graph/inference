@@ -40,15 +40,15 @@ class ProviderFactory implements ProviderFactoryInterface
     {
         $httpClient = new ProviderClient(
             (new HttpOptions())
-                ->setBaseUri('https://api.openai.com/v1/')
+                ->setBaseUri('https://api.openai.com/')
                 ->setAuthBearer($apiKey)
                 ->toArray()
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/embeddings'),
+            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
+            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 
@@ -61,15 +61,15 @@ class ProviderFactory implements ProviderFactoryInterface
     {
         $httpClient = new ProviderClient(
             (new HttpOptions())
-                ->setBaseUri('https://api.mistral.ai/v1/')
+                ->setBaseUri('https://api.mistral.ai/')
                 ->setAuthBearer($apiKey)
                 ->toArray()
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/embeddings'),
+            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
+            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 
@@ -82,15 +82,15 @@ class ProviderFactory implements ProviderFactoryInterface
     {
         $httpClient = new ProviderClient(
             (new HttpOptions())
-                ->setBaseUri('https://api.deepseek.com/v1/')
+                ->setBaseUri('https://api.deepseek.com/')
                 ->setAuthBearer($apiKey)
                 ->toArray()
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/embeddings'),
+            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
+            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 }
