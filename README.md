@@ -2,6 +2,15 @@
 
 # Inference
 
+**phpGraph Inference** is a PHP component designed to simplify the integration and usage of Large Language Models (LLMs) from various providers, including Ollama, OpenAI, Mistral, DeepSeek, and more.
+It offers a unified interface for :
+
+* Interacting with chat models (standard completions, streaming, etc.)
+* Generating vector embeddings
+* Managing multi-provider compatibility without altering your application logic
+
+The goal is to provide a simple, extensible, and developer-oriented abstraction for AI inference, enabling optimal performance and rapid integration into your PHP projects.
+
 ## Get Started
 
 First, install phpGraph Inference via the [Composer](https://getcomposer.org/) package manager:
