@@ -2,7 +2,6 @@
   "name": "php-graph/inference",
   "type": "library",
   "description": "Inference with LLM providers",
-  "version": "1.0.0",
   "keywords": [
     "Inference",
     "Ollama",
