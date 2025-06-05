@@ -1,4 +1,4 @@
-![phpGraph Banner.](/docs/banner.png)
+![phpGraph Banner.](/static/banner.png)
 
 # Inference
 
