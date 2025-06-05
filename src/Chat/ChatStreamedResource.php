@@ -44,15 +44,32 @@ readonly class ChatStreamedResource implements ChatStreamedResourceInterface
 
             foreach ($stream as $chunk) {
 
-                if (empty($chunkContent = $chunk->getContent())) {
+                if (empty($chunkContent = trim($chunk->getContent(), PHP_EOL))) {
                     continue;
                 }
 
-                $chunkJson = \json_decode($chunkContent, true);
+                foreach (preg_split('/\r\n|\r|\n/', $chunkContent) as $line) {
 
-                $streamHandler->handle(
-                    $response = new ChatResponse($chunkJson)
-                );
+                    $line = trim($line);
+
+                    if ($line === '' || $line === '[DONE]') {
+                        continue;
+                    }
+
+                    if (str_starts_with($line, 'data:')) {
+                        $line = ltrim(substr($line, strlen('data:')));
+                    }
+
+                    $chunkJson = json_decode($line, true);
+
+                    if (is_null($chunkJson)) {
+                        continue;
+                    }
+
+                    $streamHandler->handle(
+                        $response = new ChatResponse($chunkJson)
+                    );
+                }
             }
 
             return $response;
