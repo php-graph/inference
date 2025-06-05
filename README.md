@@ -87,7 +87,7 @@ $streamHandler = new ChatStreamFunctionHandler(
     function (ChatResponse $response) {
         echo $response->toArray()['message']['content'];
     }
-)
+);
 
 $resource->chatStreamed()->execute($request, $streamHandler);
 ```
@@ -194,7 +194,7 @@ $streamHandler = new ChatStreamFunctionHandler(
     function (ChatResponse $response) {
         echo $response->toArray()['choices'][0]['delta']['content'];
     }
-)
+);
 
 $resource->chatStreamed()->execute($request, $streamHandler);
 ```
@@ -305,7 +305,7 @@ $streamHandler = new ChatStreamFunctionHandler(
     function (ChatResponse $response) {
         echo $response->toArray()['choices'][0]['delta']['content'];
     }
-)
+);
 
 $resource->chatStreamed()->execute($request, $streamHandler);
 ```
@@ -416,7 +416,7 @@ $streamHandler = new ChatStreamFunctionHandler(
     function (ChatResponse $response) {
         echo $response->toArray()['choices'][0]['delta']['content'];
     }
-)
+);
 
 $resource->chatStreamed()->execute($request, $streamHandler);
 ```
