@@ -1,5 +1,5 @@
 {
-  "name": "php-graph/inference",
+  "name": "phpgraph/inference",
   "type": "library",
   "description": "Inference with LLM providers",
   "keywords": [
