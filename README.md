@@ -526,8 +526,8 @@ class InferenceChatCommand extends Command
             $ollamaResource->chatStreamed()->execute($ollamaRequest, $ollamaStreamHandler);
 
             $messages[] = [
-                'role' => 'assistant',
-                'content' => $ollamaStreamHandler->getContent(),
+                'role'      => 'assistant',
+                'content'   => $ollamaStreamHandler->getContent(),
             ];
 
             $output->writeln('');
