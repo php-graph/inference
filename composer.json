@@ -31,5 +31,9 @@
       "/tests/"
     ]
   },
-  "minimum-stability": "stable"
+  "minimum-stability": "stable",
+  "require-dev": {
+    "symfony/console": "^7.3",
+    "symfony/dependency-injection": "^7.3"
+  }
 }
