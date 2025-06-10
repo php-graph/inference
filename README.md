@@ -491,7 +491,7 @@ class InferenceChatCommand extends Command
 
         $ollamaHost = $io->ask('host');
 
-        $ollamaChat = ProviderFactory::createOllamaResource($ollamaHost);
+        $ollamaResource = ProviderFactory::createOllamaResource($ollamaHost);
 
         $messages = [[
             'role'      => 'system',
@@ -523,7 +523,7 @@ class InferenceChatCommand extends Command
                 }
             );
 
-            $ollamaChat->chatStreamed()->execute($ollamaRequest, $ollamaStreamHandler);
+            $ollamaResource->chatStreamed()->execute($ollamaRequest, $ollamaStreamHandler);
 
             $messages[] = [
                 'role' => 'assistant',
