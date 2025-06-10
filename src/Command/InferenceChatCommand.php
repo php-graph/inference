@@ -8,15 +8,27 @@ use phpGraph\Inference\Chat\Request\ChatRequest;
 use phpGraph\Inference\Chat\Response\ChatResponse;
 use phpGraph\Inference\Chat\Response\Stream\ChatStreamFunctionHandler;
 use phpGraph\Inference\ProviderFactory;
-use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
-#[AsCommand(name: 'inference:chat',)]
 class InferenceChatCommand extends Command
 {
+    /**
+     * @return void
+     */
+    protected function configure(): void
+    {
+        $this->setName('inference:chat');
+    }
+
+    /**
+     * @param InputInterface $input
+     * @param OutputInterface $output
+     *
+     * @return int
+     */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $io = new SymfonyStyle($input, $output);
@@ -34,14 +46,14 @@ class InferenceChatCommand extends Command
             }
 
             $messages = [[
-                'role'      => 'system',
-                'content'   => 'You are an intelligent AI agent named Symfony.'
+                'role' => 'system',
+                'content' => 'You are an intelligent AI agent named Symfony.'
             ]];
 
             $ollamaRequest = new ChatRequest([
-                'model'     => 'devstral',
-                'messages'  => $messages,
-                'stream'    => true,
+                'model' => 'devstral',
+                'messages' => $messages,
+                'stream' => true,
             ]);
 
             $ollamaStreamHandler = new ChatStreamFunctionHandler(
@@ -53,8 +65,8 @@ class InferenceChatCommand extends Command
             $ollamaChat->chatStreamed()->execute($ollamaRequest, $ollamaStreamHandler);
 
             $messages[] = [
-                'role'      => 'assistant',
-                'content'   => $ollamaStreamHandler->getContent(),
+                'role' => 'assistant',
+                'content' => $ollamaStreamHandler->getContent(),
             ];
 
             $output->writeln('');
