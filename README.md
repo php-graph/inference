@@ -489,9 +489,7 @@ class InferenceChatCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $ollamaHost = $io->ask('host');
-
-        $ollamaResource = ProviderFactory::createOllamaResource($ollamaHost);
+        $ollamaResource = ProviderFactory::createOllamaResource('http://localhost:11434');
 
         $messages = [[
             'role'      => 'system',
@@ -529,6 +527,8 @@ class InferenceChatCommand extends Command
                 'role'      => 'assistant',
                 'content'   => $ollamaStreamHandler->getContent(),
             ];
+            
+            $messages  = array_slice($messages, -50, 50);
 
             $output->writeln('');
             $output->writeln('');
