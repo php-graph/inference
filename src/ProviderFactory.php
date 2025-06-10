@@ -25,9 +25,9 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/api/chat'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/api/chat'),
-            embedResource: new EmbedResource($httpClient, '/api/embed'),
+            new ChatResource($httpClient, '/api/chat'),
+            new ChatStreamedResource($httpClient, '/api/chat'),
+            new EmbedResource($httpClient, '/api/embed'),
         );
     }
 
@@ -46,9 +46,9 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
+            new ChatResource($httpClient, '/v1/chat/completions'),
+            new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 
@@ -67,9 +67,9 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
+            new ChatResource($httpClient, '/v1/chat/completions'),
+            new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 
@@ -88,9 +88,9 @@ class ProviderFactory implements ProviderFactoryInterface
         );
 
         return new ProviderResource(
-            chatResource: new ChatResource($httpClient, '/v1/chat/completions'),
-            chatStreamedResource: new ChatStreamedResource($httpClient, '/v1/chat/completions'),
-            embedResource: new EmbedResource($httpClient, '/v1/embeddings'),
+            new ChatResource($httpClient, '/v1/chat/completions'),
+            new ChatStreamedResource($httpClient, '/v1/chat/completions'),
+            new EmbedResource($httpClient, '/v1/embeddings'),
         );
     }
 }
