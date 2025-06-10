@@ -500,7 +500,7 @@ class InferenceChatCommand extends Command
 
         while (true) {
 
-            $message = $io->ask('message: ');
+            $message = $io->ask('message');
 
             if ($message === '/bye') {
                 break;
