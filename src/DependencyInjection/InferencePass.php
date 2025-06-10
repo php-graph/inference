@@ -17,7 +17,7 @@ class InferencePass implements CompilerPassInterface
      */
     public function process(ContainerBuilder $container): void
     {
-        if (!$container->hasDefinition(InferenceChatCommand::class)) {
+        if ($container->hasDefinition(InferenceChatCommand::class)) {
 
             $definition = $container->getDefinition(InferenceChatCommand::class);
 
