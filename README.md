@@ -490,7 +490,6 @@ class InferenceChatCommand extends Command
         $io = new SymfonyStyle($input, $output);
 
         $ollamaResource = ProviderFactory::createOllamaResource('http://localhost:11434');
-
         
         $ollamaModel = 'mistral-small3.1';
 
