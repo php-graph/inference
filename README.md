@@ -545,11 +545,16 @@ class InferenceChatCommand extends Command
                     if (isset($message['tool_calls'])) {
 
                         foreach ($message['tool_calls'] as $tool) {
-                            $name       = $tool['function']['name'];
-                            $arguments  = $tool['function']['arguments'];
+
+                            $name = $tool['function']['name'];
+
+                            $arguments = $tool['function']['arguments'];
+                            
+                            $content = call_user_func_array([$this, $name], $arguments);
+
                             $messages[] = [
                                 'role'      => 'tool',
-                                'content'   => call_user_func_array([$this, $name], $arguments),
+                                'content'   => $content,
                             ];
                         }
 
