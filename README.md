@@ -517,7 +517,9 @@ class InferenceChatCommand extends Command
 
             $ollamaStreamHandler = new ChatStreamFunctionHandler(
                 function (ChatResponse $chatResponse) use ($output) {
-                    $output->write($chatResponse->get('message')['content'] ?? '');
+                    $content = $message['content'] ?? '';
+                    $output->write($content);
+                    return $content;
                 }
             );
 
