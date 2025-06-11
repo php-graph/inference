@@ -491,10 +491,27 @@ class InferenceChatCommand extends Command
 
         $ollamaResource = ProviderFactory::createOllamaResource('http://localhost:11434');
 
+        
+        $ollamaModel = 'mistral-small3.1';
+
         $messages = [[
             'role'      => 'system',
             'content'   => 'You are an intelligent AI agent named Symfony.'
         ]];
+
+        $tools = [
+            [
+                'type' => 'function',
+                'function' => [
+                    'name'          => 'currentDateTime',
+                    'description'   => 'Provides the UTC date and time in Y-m-d H:i:s format',
+                ],
+            ],
+        ];
+
+        $options = [
+            'temperature' => 0,
+        ];
 
         while (true) {
 
@@ -509,28 +526,57 @@ class InferenceChatCommand extends Command
                 'content'   => $message,
             ];
 
+            reload:
+
             $ollamaRequest = new ChatRequest([
-                'model'     => 'devstral',
+                'model'     => $ollamaModel,
                 'messages'  => $messages,
+                'tools'     => $tools,
+                'options'   => $options,
                 'stream'    => true,
             ]);
 
+            $hasTools = false;
+
             $ollamaStreamHandler = new ChatStreamFunctionHandler(
-                function (ChatResponse $chatResponse) use ($output) {
+                function (ChatResponse $chatResponse) use ($output, &$messages, &$hasTools) {
+
+                    $message = $chatResponse->get('message');
+
+                    if (isset($message['tool_calls'])) {
+
+                        foreach ($message['tool_calls'] as $tool) {
+                            $name       = $tool['function']['name'];
+                            $arguments  = $tool['function']['arguments'];
+                            $messages[] = [
+                                'role'      => 'tool',
+                                'content'   => call_user_func_array([$this, $name], $arguments),
+                            ];
+                        }
+
+                        $hasTools = true;
+                    }
+
                     $content = $message['content'] ?? '';
+
                     $output->write($content);
+
                     return $content;
                 }
             );
 
             $ollamaResource->chatStreamed()->execute($ollamaRequest, $ollamaStreamHandler);
 
+            if ($hasTools) {
+                goto reload;
+            }
+
             $messages[] = [
                 'role'      => 'assistant',
                 'content'   => $ollamaStreamHandler->getContent(),
             ];
-            
-            $messages  = array_slice($messages, -50, 50);
+
+            $messages = array_slice($messages, -50, 50);
 
             $output->writeln('');
             $output->writeln('');
