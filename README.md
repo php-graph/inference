@@ -584,5 +584,13 @@ class InferenceChatCommand extends Command
 
         return Command::SUCCESS;
     }
+
+    /**
+     * @return string
+     */
+    public function currentDateTime(): string
+    {
+        return (new \DateTime())->format('Y-m-d H:i:s');
+    }
 }
 ```
