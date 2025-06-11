@@ -493,7 +493,7 @@ class InferenceChatCommand extends Command
         
         $ollamaModel = 'mistral-small3.1';
 
-        $messages = [[
+        $messages = $baseMessage = [[
             'role'      => 'system',
             'content'   => 'You are an intelligent AI agent named Symfony.'
         ]];
@@ -518,6 +518,13 @@ class InferenceChatCommand extends Command
 
             if ($message === '/bye') {
                 break;
+            }
+
+            if ($message === '/reset') {
+
+                $messages = $baseMessage;
+
+                continue;
             }
 
             $messages[] = [
